@@ -4,3 +4,10 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 
 */
+
+let n = 5;
+
+result = Number(String(n)) + Number(String(n) + String(n)) + 
+    Number(String(n) + String(n) + String(n));
+    
+console.log(result);
