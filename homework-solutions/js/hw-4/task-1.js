@@ -12,4 +12,5 @@ let grade;
   } else {
       grade = "junior";  
     }
+console.log(typeof Number('11a'))
 
