@@ -8,7 +8,7 @@ const word = 'hello';
 let vowelsAndConsonantsResult = '';
 
 vowels = ['A', 'E', 'I', 'O', 'U', 'Y'];
-consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
+consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z'];
 
 let countOfvowels = 0;
 let countOfconsonants = 0;
@@ -35,7 +35,5 @@ vowels.forEach((element) => {
 });
 
 vowelsAndConsonantsResult = `${word} contains ${countOfvowels} vowels and ${countOfconsonants} consonants`;
-
-//console.log(vowelsAndConsonantsResult);
 
 export { vowelsAndConsonantsResult };
