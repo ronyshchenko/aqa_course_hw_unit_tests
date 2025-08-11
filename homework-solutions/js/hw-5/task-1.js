@@ -27,7 +27,17 @@ for (let i = 10; i >= 0; i = i - 2) {
 
 let smilePatternResult = '';
 
-smilePatternResult = smilePatternResult + ':)\n' + ':):)\n' + ':):):)\n' + ':):):):)\n' + ':):):):):)';
+for(let i=1; i<6; i++) {
+    let j = 1;
+    let someSmileInString = '';
+    while(j <= i) {
+        someSmileInString = someSmileInString + ':)';
+        j++;
+    }
+    someSmileInString = someSmileInString + '\n'
+    smilePatternResult = smilePatternResult + someSmileInString;
+}
+smilePatternResult = smilePatternResult.slice(0, smilePatternResult.length - 1); //удаляем самый последний \n
 
 /**
  * Заменить все пробелы в переменной text на "1".

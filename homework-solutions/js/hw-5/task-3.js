@@ -7,33 +7,25 @@ const word = 'hello';
 
 let vowelsAndConsonantsResult = '';
 
-vowels = ['A', 'E', 'I', 'O', 'U', 'Y'];
-consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z'];
+const vowels = ['A', 'E', 'I', 'O', 'U', 'Y'];
+const consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z'];
 
 let countOfvowels = 0;
 let countOfconsonants = 0;
 
-function countOccurrences(str, char) {
-  let count = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === char) {
-      count++;
-    }
+for(const letter of word.toUpperCase()) {
+  for (const symbol of ['A', 'E', 'I', 'O', 'U', 'Y']) {
+	  if (symbol === letter) {
+		countOfvowels++;
+	  }
   }
-  return count;
+
+  for (const symbol of ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z']) {
+    if (symbol === letter) {
+		countOfconsonants++;
+	  }
+  }
 }
 
-str = word;
-str = str.toUpperCase();
-
-consonants.forEach((element) => {
-  countOfconsonants = countOfconsonants + countOccurrences(str, element);
-});
-
-vowels.forEach((element) => {
-  countOfvowels = countOfvowels + countOccurrences(str, element);
-});
-
 vowelsAndConsonantsResult = `${word} contains ${countOfvowels} vowels and ${countOfconsonants} consonants`;
-
 export { vowelsAndConsonantsResult };
