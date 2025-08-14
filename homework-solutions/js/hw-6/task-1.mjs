@@ -9,12 +9,12 @@
 */
 const forOf = [];
 
-let array1 = [1,2,3,4,5,6,7,8,9,10];
+let array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-for(const elem of array1) {
-  if(elem%2 === 0) {
-    forOf.push(elem**2);
-  } else forOf.push(elem**3);
+for (const elem of array1) {
+  if (elem % 2 === 0) {
+    forOf.push(elem ** 2);
+  } else forOf.push(elem ** 3);
 }
 
 /*
@@ -30,13 +30,13 @@ for(const elem of array1) {
 
 let result = [];
 
-let array2 = [1,2,3,4,5];
+let array2 = [1, 2, 3, 4, 5];
 
 array2.push(6);
 array2.unshift(0);
-result = array2.splice(2, 1);
+array2.splice(2, 1);
+array2.pop();
 result = [...array2];
-result.pop();
 
 /*
 3. Деструктуризация массивов
@@ -48,8 +48,7 @@ result.pop();
 
 let array3 = [3, 11, 32, 7, 20];
 
-let [first, second, ...rest] = array3
-
+let [first, second, ...rest] = array3;
 
 /*
 
@@ -61,11 +60,9 @@ let [first, second, ...rest] = array3
   Создайте переменную mergedArray, который будет хранить значения из массивов 1 и 2
 */
 
-let arr4 = [1,2,3,4,5];
-let arr5 = [6,7,8,9,10];
+let arr4 = [1, 2, 3, 4, 5];
+let arr5 = [6, 7, 8, 9, 10];
 
-
-
-let mergedArray = [...arr4, ...arr5]
+let mergedArray = [...arr4, ...arr5];
 
 export { forOf, result, first, second, rest, mergedArray };

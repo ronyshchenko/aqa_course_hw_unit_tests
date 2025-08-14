@@ -13,30 +13,26 @@
   const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 */
 
-const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai']
+const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 const myPizzasT1 = ['Peperoni', 'Margherita', 'Diablo', 'Vegetarian'];
 const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 
 let resultUnique = [];
-let resultUnique1 = [];
 let resultNull;
 
-for(const elem of myPizzasT1) {
-  if (!competitorPizzas.includes(elem)) {
-    resultUnique.push(elem)
+function checkUniqueValue(myPizzas) {
+  let resultUnique = [];
+
+  for (const elem of myPizzas) {
+    if (!competitorPizzas.includes(elem)) {
+      resultUnique.push(elem);
+    }
   }
+
+  return resultUnique.length !== 0 ? resultUnique : null;
 }
 
-
-for(const elem of myPizzasT2 ) {
-  if (!competitorPizzas.includes(elem)) {
-    resultUnique1.push(elem)
-  }
-}
-
-if (resultUnique1.length === 0) {
-  resultNull = null;
-}
-
+resultUnique = checkUniqueValue(myPizzasT1);
+resultNull = checkUniqueValue(myPizzasT2);
 
 export { resultNull, resultUnique };
