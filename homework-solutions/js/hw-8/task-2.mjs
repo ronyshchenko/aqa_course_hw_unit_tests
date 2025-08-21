@@ -18,8 +18,39 @@ const words = [
   'queue',
 ];
 
+
+let words1 = []
+
 function sortedByVowels(wordsArr) {
-  // Ваш код
+
+  //const word = wordsArr[0];
+
+
+let countOfvowels;
+let countOfvowelsArr = [];
+
+for(const word of words) {
+  countOfvowels = 0
+for(const letter of word.toUpperCase()) {
+  for (const symbol of ['A', 'E', 'I', 'O', 'U', 'Y']) {
+	  if (symbol === letter) {
+		countOfvowels++;
+	  }
+  }
+
+  }
+  
+   words1[countOfvowels] = word
+  //countOfvowelsArr.push(countOfvowels);
 }
+  return words1
+  //countOfvowelsArr.sort((a,b) => (a-b));
+}
+
+
+console.log(sortedByVowels(words))
+
+
+
 
 export { sortedByVowels };
