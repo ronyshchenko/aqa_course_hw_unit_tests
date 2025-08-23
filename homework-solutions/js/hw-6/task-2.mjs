@@ -23,8 +23,8 @@ let resultNull;
 function checkUniqueValue(myPizzas) {
   let resultUnique = [];
 
-  for (const elem of myPizzas) {
-    if (!competitorPizzas.includes(elem)) {
+  for (let elem of myPizzas) {
+    if (!competitorPizzas.map(el => el.toLowerCase() ).includes(elem.toLowerCase())) {
       resultUnique.push(elem);
     }
   }
