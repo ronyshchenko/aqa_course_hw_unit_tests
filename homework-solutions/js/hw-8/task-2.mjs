@@ -5,34 +5,21 @@
   Массив должен быть отсортирован по возрастанию количества гласных букв в слове.
  */
 
-const words = [
-  'umbrella',
-  'apple',
-  'ocean',
-  'independent',
-  'education',
-  'elephant',
-  'island',
-  'universe',
-  'environment',
-  'queue',
-];
+//let words  = ['apple', 'banana', 'cat'];
 
 
-let words1 = []
+
+
 
 function sortedByVowels(wordsArr) {
-
-  //const word = wordsArr[0];
-
-
+let words2 = []
 let countOfvowels;
-let countOfvowelsArr = [];
 
-for(const word of words) {
-  countOfvowels = 0
-for(const letter of word.toUpperCase()) {
-  for (const symbol of ['A', 'E', 'I', 'O', 'U', 'Y']) {
+for(const word of wordsArr) {
+  let words1 = []
+
+for(const letter of word) {
+  for (const symbol of ['a', 'e', 'i', 'o', 'u', 'y']) {
 	  if (symbol === letter) {
 		countOfvowels++;
 	  }
@@ -40,17 +27,43 @@ for(const letter of word.toUpperCase()) {
 
   }
   
-   words1[countOfvowels] = word
-  //countOfvowelsArr.push(countOfvowels);
-}
-  return words1
-  //countOfvowelsArr.sort((a,b) => (a-b));
+    words1.push(countOfvowels);
+    words1.push(word);
+    words2.push( { name: word, age: countOfvowels });
 }
 
+    words2.sort(function(a, b) {
+      return a.age - b.age; // Сортировка по возрасту по возрастанию
+    });
 
-console.log(sortedByVowels(words))
+    wordsArr = [...words2.map(elem => elem.name)]
+
+  return wordsArr;
+}
+//console.log(words)
+//console.log(sortedByVowels(words))
 
 
+// function sortedByVowels(words) {
+//   const vowels = "aeiou";
 
+//   const countVowels = (word) => {
+//     let count = 0;
+//     const lowerCaseWord = word.toLowerCase();
+//     for (let i = 0; i < lowerCaseWord.length; i++) {
+//       if (vowels.includes(lowerCaseWord[i])) {
+//         count++;
+//       }
+//     }
+//     return count;
+//   };
+
+//   return words.sort((a, b) => {
+//     return countVowels(a) - countVowels(b);
+//   });
+// }
+
+
+console.log(sortedByVowels(['apple', 'banana', 'cat']))
 
 export { sortedByVowels };
