@@ -6,21 +6,21 @@
   Пример: const arr = [5,2,7,3,8,1,6] //4
 */
 
-const arr = [5,2,7,3,8,1,6] 
-let arrnew = []
-function findMissingNumber(numbers) {
-arrnew = numbers.sort((a,b) => a-b )
-console.log(arrnew)
-  return arrnew.find((item, index, numbers) => {
+// const arr = [5,2,7,3,8,1,6] 
+// let arrnew = []
+// function findMissingNumber(numbers) {
+// arrnew = numbers.sort((a,b) => a-b )
+// console.log(arrnew)
+//   return arrnew.find((item, index, numbers) => {
    
-    return ((numbers[index] - numbers[index-1]) > 1)
-   }
-)-1
-}
+//     return ((numbers[index] - numbers[index-1]) > 1) 
+//    }
+// )
+// }
 
-console.log(findMissingNumber(arr))
-
-
+// console.log(findMissingNumber(arr))
 
 
-export { findMissingNumber };
+
+
+// export { findMissingNumber };
