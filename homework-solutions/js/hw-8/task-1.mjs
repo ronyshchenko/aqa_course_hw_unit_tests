@@ -22,7 +22,7 @@ numbers.forEach((item) => {
   } 
 });
 
-let map = numbers.map((item) => (item - numbers.length));
+let map = numbers.map((item, index, array) => item - array.length);
 
 let filter = [];
 
@@ -42,6 +42,6 @@ let reduce = numbers.reduce((sum, current) => sum + current, 0);;
 
 let some  = numbers.some(item => item  > 90);
  
-let every = numbers.every(item => item/10  > 1);
+let every = numbers.every(item => (item >= 10 && item <= 99));
 
 export { forEach, map, filter, find, sort, reduce, some, every };

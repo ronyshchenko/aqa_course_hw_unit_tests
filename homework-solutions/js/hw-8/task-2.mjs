@@ -4,12 +4,10 @@
   возвращает отсортированный массив по следующему критерию: количество гласных букв.
   Массив должен быть отсортирован по возрастанию количества гласных букв в слове.
  */
-
-function sortedByVowels(wordsArr) {
-
   const vowels = "aeiou";
 
-  const countVowels = (word) => {
+
+const countVowels = (word) => {
     let count = 0;
     const lowerCaseWord = word.toLowerCase();
     for (let i = 0; i < lowerCaseWord.length; i++) {
@@ -19,11 +17,14 @@ function sortedByVowels(wordsArr) {
     }
     return count;
   };
+
+function sortedByVowels(wordsArr) {
     wordsArr.sort(function(a, b) {
       return countVowels(a) - countVowels(b);
     });
 
   return wordsArr;
   }
+
 
 export { sortedByVowels };
