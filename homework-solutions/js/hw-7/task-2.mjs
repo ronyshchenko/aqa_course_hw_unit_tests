@@ -16,7 +16,7 @@ return typeof word === 'string' && (word.split('').reverse().join('').toLowerCas
 
 function findLongestWords(sentence) {
 
-  if(typeof sentence !== 'string' || sentence.length == 0) {
+  if(typeof sentence !== 'string' || sentence.trim().length == 0) {
     return []
   }
  

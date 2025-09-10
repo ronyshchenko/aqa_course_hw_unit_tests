@@ -76,18 +76,12 @@ function fibonacci(n) {
   let secondFibonachi = 1;
   let nextFibonachi;
 
-   if(n == 0) {
-      return firstFibonachi;
-    } else if (n == 1) {
-      return secondFibonachi;
-    } else {
-        for(let i=2; i<=n;i++){
-          nextFibonachi=firstFibonachi + secondFibonachi;
-          firstFibonachi = secondFibonachi;
-          secondFibonachi = nextFibonachi;
-        }
-      }
+ if(n < 2) return n;
+   for(let i = 2; i <= n; i++) {
+      nextFibonachi=firstFibonachi + secondFibonachi;
+      firstFibonachi = secondFibonachi;
+      secondFibonachi = nextFibonachi;
+    }
   return nextFibonachi;
 }
-
 export { mergeArrays, fibonacci, devideBy };
