@@ -5,7 +5,18 @@
     Значения в строке должны ссылаться на контекст ЭТОГО ОБЪЕКТА, без подмен.
 */
 
-let qa;
+let qa  = { 
+  name: 'Barney', 
+  age: 36, 
+  salary: 'male',
+
+  getInfo(greetingsWord) {
+    return `${greetingsWord}, my name is ${this.name}, I'm ${this.age} and my salary is ${this.salary}`
+  }
+  };
+  
+  console.log(qa.getInfo('Roman'));
+
 
 /*
  2. Changing the context
@@ -15,8 +26,16 @@ let qa;
   - Вызовите метод getInfo объекта qa c контекстом вызова объекта anotherQa с помощью метода apply()
  */
 
-let anotherQa;
+let anotherQa = { 
+  name: 'Tanya', 
+  age: 56, 
+  salary: 'female',
+  }; 
 
+  const anotherGetInfo = qa.getInfo.bind(anotherQa);
+  console.log(anotherGetInfo('Nata'));
+  
+  
 // Используйте bind с greetingWord "Hello"
 let bindResult;
 
