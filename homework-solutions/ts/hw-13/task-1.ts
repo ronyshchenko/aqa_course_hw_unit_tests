@@ -67,7 +67,7 @@ type DiscountedProduct = Product & {discount: number};
     discount: 10
   };
 
-  function calculateDiscount(discountedProduct: {id: number; name: String; price: number; discount: number}): number {
+  function calculateDiscount(discountedProduct: DiscountedProduct): number {
     return discountedProduct.price - discountedProduct.price*discountedProduct.discount/100;
   }
 

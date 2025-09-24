@@ -9,13 +9,11 @@
 
 
 function validatePassword(password: string): Boolean {
-    let isCorectPassword: Boolean;
-    isCorectPassword = password.length >= 8 &&
+     return password.length >= 8 &&
         (password.toLowerCase() != password) &&
         (password != password.toUpperCase()) &&
         (password.trim().length != 0) &&
-        (/\d/.test(password));;
-    return isCorectPassword;
+        (/\d/.test(password));
 }
 
 console.log(validatePassword('Dobrolubova22'));
