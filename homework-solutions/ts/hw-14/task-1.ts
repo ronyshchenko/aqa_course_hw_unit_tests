@@ -11,8 +11,8 @@
 
 // 2. Создайте дженерик функцию getLastElement, которая принимает массив элементов типа T, и возвращает последний элемент (типа T).
 
-    function getLastItem<T>(Array: T[]): T  {
-      return Array[Array.length - 1];
+    function getLastItem<T>(array: T[]): T  {
+      return array[array.length - 1];
     }
 
     console.log(getLastItem([1, 2, 3, 4])); // 4

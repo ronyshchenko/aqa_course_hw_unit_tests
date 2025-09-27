@@ -5,10 +5,10 @@
 //    Пример:
 //    map([1,2,3,4,5], callback) => [0,2,6,12,20]
 
-type MapCallback<T> = (element: T, index: number, array: T[]) => T;
+type MapCallback<T, U> = (element: T, index: number, array: T[]) => U;
 
-function map<T>(array: T[], callback: MapCallback<T>): T[] {
-    let arr: Array<T> = [];
+function map<T, U>(array: T[], callback: MapCallback<T, U>): U[] {
+    const arr: Array<U> = [];
     for(let i=0; i < array.length; i++) {
         arr.push(callback(array[i], i, array))
     }
