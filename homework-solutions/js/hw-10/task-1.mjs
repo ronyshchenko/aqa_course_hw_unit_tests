@@ -5,17 +5,34 @@
     Значения в строке должны ссылаться на контекст ЭТОГО ОБЪЕКТА, без подмен.
 */
 
-let qa;
+let qa = {
+  name: 'Roman',
+  age: 53,
+  salary: 3000,
+  getInfo: function(greetingsWord) {
+    return `${greetingsWord}, my name is ${this.name}, I'm ${this.age} and my salary is ${this.salary}`;
+  }
+}
+console.log(qa.getInfo('Petro'));
 
 /*
  2. Changing the context
   - Создайте объект anotherQa с полями name, age, salary, значения в которых будут отличны от объекта qa
-  - Вызовите метод getInfo объекта qa c контекстом вызова объекта anotherQa с помощью метода bind()
+  - Вызовите метод getInfo объекта qa c контекстом вызова объекта c с помощью метода bind()
   - Вызовите метод getInfo объекта qa c контекстом вызова объекта anotherQa с помощью метода call()
   - Вызовите метод getInfo объекта qa c контекстом вызова объекта anotherQa с помощью метода apply()
  */
 
-let anotherQa;
+let anotherQa = {
+  name: 'Natali',
+  age: 40,
+  salary: 2000,
+  getInfo: function(greetingsWord) {
+    return `${greetingsWord}, my name is ${this.name}, I'm ${this.age} and my salary is ${this.salary}`;
+  }
+}
+
+console.log(qa.getInfo.bind(anotherQa)('Petro'));
 
 // Используйте bind с greetingWord "Hello"
 let bindResult;
